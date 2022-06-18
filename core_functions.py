@@ -1,8 +1,13 @@
 """
-PyFourLen
---- Core Functions ---
+FourHasFourLetters -- A Python app that demonstrates the weird and wonderful world of worded-form-length functions.
+Copyright (c) 2022 jahinzee (Jahin Z.)
+
+----
+
+## Core Functions
 
 Classes defining the Base, Chain, and Reel objects.
+
 """
 
 from collections import namedtuple
