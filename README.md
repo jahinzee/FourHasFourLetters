@@ -1,8 +1,6 @@
-<center>
-<img src="logo-full.svg" alt="FourHasFouretters" style="height: 64px;">
+<img src="logo-full.svg" alt="FourHasFouretters" height=64 align="center">
 
 *A Python app that demonstrates the weird and wonderful world of worded-form-length functions.*
-</center>
 
 <br>
 
