@@ -109,6 +109,7 @@ To generate a reel for words in Vietnamese from 10 to 15:
 ```
 
 Note that for all of these, 3 and 2 represent the loop<sup>3</sup>.
+
 ---
 <sup>1</sup>: Why reels? Because the [collective noun for chain](https://www.answers.com/english-language-arts/What_is_the_collective_noun_of_chain), and indeed collective nouns in general, are weird.
 
