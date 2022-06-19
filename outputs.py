@@ -75,7 +75,3 @@ class ChainOutput(Chain):
             out += Fore.RESET
 
         return out
-
-if __name__ == "__main__":
-
-    print(ChainOutput(1, "en"))
