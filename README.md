@@ -5,6 +5,7 @@ A Python app that demonstrates the weird and wonderful world of worded-form-leng
 - [FourHasFourLetters](#fourhasfourletters)
   - [Table of Contents](#table-of-contents)
   - [Dependencies](#dependencies)
+    - [What each dependency is for](#what-each-dependency-is-for)
   - [Theory](#theory)
     - [Base](#base)
     - [Chain](#chain)
@@ -24,6 +25,14 @@ Install the dependencies first before using the scripts:
 ```
 pip install -r requirements.txt
 ```
+
+### What each dependency is for
+
+| Package | Purpose |
+| ------- | ------- |
+| `num2words` | *Converts numbers to words.*<br>This is, of course, the heart of the app. |
+| `colorama` | *A library that provides ANSI color codes for terminal output.*<br>This serves to make the terminal outputs easier on the eyes. |
+| `tabulate` | *A library that provides a simple way to format tabular data.*<br>This also serves to make outputs cleaner. |
 
 ## Theory
 This project involves the simple theory of a recursive word-length function. In other words, extending the idea of "Four Has Four Letters" to a more general case.
