@@ -10,6 +10,7 @@ Classes defining the Base, Chain, and Reel objects.
 
 """
 
+from asyncio import format_helpers
 from collections import namedtuple
 from num2words import num2words
 
@@ -18,6 +19,8 @@ class Base:
     # default language to use if not specified
     DEFAULT_LANGUAGE = 'en'
 
+    # English only: force a two-cycle between 5 and 2
+    SILLY_FORCE_TWO_CYCLE_EN = False
 
     def __init__(self, language=None):
         """
@@ -32,6 +35,12 @@ class Base:
         @param i: number to convert to words
         @return: number of characters in worded i in language
         """
+
+        # handle SILLY_FORCE_TWO_CYCLE_EN
+        # https://youtu.be/LYKn0yUTIU4?t=290
+        if self.SILLY_FORCE_TWO_CYCLE_EN:
+            if i == 9: return len("niner")
+            if i == 5: return len("fivearino")
 
         return len(num2words(i, lang=self._language))
     
