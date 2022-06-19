@@ -1,27 +1,29 @@
-<img src="logo-full.svg" alt="FourHasFouretters" height=64 align="center">
+<img src="logo.svg" alt="FourHasFouretters" height=64 align="left" style="padding: 15px">
 
-*A Python app that demonstrates the weird and wonderful world of worded-form-length functions.*
+# FourHasFourLetters
+A Python app that demonstrates the weird and wonderful world of worded-form-length functions.
 
 <br>
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Dependencies](#dependencies)
-  - [What each dependency is for](#what-each-dependency-is-for)
-- [Theory](#theory)
-  - [Base](#base)
-  - [Chain](#chain)
-    - [`namedtuple`](#namedtuple)
-  - [Reel<sup>1</sup>](#reelsup1sup)
-    - [`namedtuple`](#namedtuple-1)
-- [Usage](#usage)
-  - [Working with Chains](#working-with-chains)
-    - [Parameters](#parameters)
-    - [Example](#example)
-  - [Working with Reels](#working-with-reels)
-    - [Parameters](#parameters-1)
-    - [Example](#example-1)
-- [Future Plans](#future-plans)
+- [FourHasFourLetters](#fourhasfourletters)
+  - [Table of Contents](#table-of-contents)
+  - [Dependencies](#dependencies)
+    - [What each dependency is for](#what-each-dependency-is-for)
+  - [Theory](#theory)
+    - [Base](#base)
+    - [Chain](#chain)
+      - [`namedtuple`](#namedtuple)
+    - [Reel<sup>1</sup>](#reelsup1sup)
+      - [`namedtuple`](#namedtuple-1)
+  - [Usage](#usage)
+    - [Working with Chains](#working-with-chains)
+      - [Parameters](#parameters)
+      - [Example](#example)
+    - [Working with Reels](#working-with-reels)
+      - [Parameters](#parameters-1)
+      - [Example](#example-1)
+  - [Future Plans](#future-plans)
 
 ## Dependencies
 Install the dependencies first before using the scripts:
