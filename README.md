@@ -19,6 +19,7 @@ A Python app that demonstrates the weird and wonderful world of worded-form-leng
     - [Working with Reels](#working-with-reels)
       - [Parameters](#parameters-1)
       - [Example](#example-1)
+  - [Future Plans](#future-plans)
 
 ## Dependencies
 Install the dependencies first before using the scripts:
@@ -136,6 +137,13 @@ To generate a reel for words in Vietnamese from 10 to 15:
 ```
 
 Note that for all of these, 3 and 2 represent the loop<sup>3</sup>.
+
+## Future Plans
+
+[] Config file support
+[] Implement command-line switches + a guided terminal interface for the user.
+[] Improve efficiency via look-up tables.
+[] Allow for custom languages, including ones with terminating cases ([Pokémon??](https://www.youtube.com/watch?v=LYKn0yUTIU4&lc=UgiTAl4G7qjJ_HgCoAEC))
 
 ---
 <sup>1</sup>: Why reels? Because the [collective noun for chain](https://www.answers.com/english-language-arts/What_is_the_collective_noun_of_chain), and indeed collective nouns in general, are weird.
