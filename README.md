@@ -1,7 +1,7 @@
-<img src="logo.svg" alt="FourHasFouretters" width=128 align="left">
+<img src="logo.svg" alt="FourHasFouretters" width=64 style="padding-bottom: 8px;">
 
 # FourHasFourLetters
-A Python app that demonstrates the weird and wonderful world of worded-form-length functions.
+*A Python app that demonstrates the weird and wonderful world of worded-form-length functions.*
 
 <br>
 
