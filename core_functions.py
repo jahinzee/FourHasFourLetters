@@ -10,7 +10,6 @@ Classes defining the Base, Chain, and Reel objects.
 
 """
 
-from asyncio import format_helpers
 from collections import namedtuple
 from num2words import num2words
 
