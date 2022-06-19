@@ -1,2 +1,3 @@
 num2words
 colorama
+tabulate
