@@ -14,7 +14,7 @@
     - [Base](#base)
     - [Chain](#chain)
       - [`namedtuple`](#namedtuple)
-    - [Reel<sup>1</sup>](#reelsup1sup)
+    - [Reel](#reel)
       - [`namedtuple`](#namedtuple-1)
   - [Usage](#usage)
     - [Working with Chains](#working-with-chains)
@@ -63,8 +63,8 @@ This represents the data structure that is output by the `Chain().gen()` functio
     - loop_start_idx: 3      // the index of the first loop integer in the chain. 
 ```
 
-### Reel<sup>1</sup>
-A series of chains, ranging from a `min` to a `max` integer.
+### Reel
+A series of chains, ranging from a `min` to a `max` integer<sup>1</sup>.
 
 #### `namedtuple`
 This represents the data structure that is output by the `Reel().gen()` function:
