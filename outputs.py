@@ -119,9 +119,3 @@ class ReelOutput():
         """
 
         return self.out
-
-if __name__ == "__main__":
-
-    # test reelOutput 1 - 100
-    reel = ReelOutput(Reel("fr").gen(1, 100))
-    print(reel)
