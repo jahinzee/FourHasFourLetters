@@ -10,11 +10,11 @@ Returning the results in text form
 
 """
 
-from core_functions import Chain
+from core_functions import Chain, Reel
 from tabulate import tabulate
 from colorama import init as colorama_init, Fore
 
-class ChainOutput(Chain):
+class ChainOutput():
 
     # constant: colorama colours for output
     COLORS = {
@@ -28,50 +28,100 @@ class ChainOutput(Chain):
         "edge": " ━ "
     }
 
-    def __init__(self, i, language=None):
+    def __init__(self, chain: Chain.Chain):
         """
         constructor
-        @param i:        number to begin chain with
-        @param language: language to use
+        @param chain: Chain to output
+
+        OUT:
+        a string of ints representing the chain
+        - each value is separated by an edge symbol
+        - loop values are highlighted in yellow
         """
-        
-        super().__init__(language)
 
         # initialise colorama
         colorama_init()
 
+        self.out = ""
+
         # calculate chain and loop start index
-        self.array, loop_start = super().gen(i)
+        array, loop_start = chain
 
         # create list to store if idx in array is a loop value
         self.idx_is_loop = []
 
-        # populate list with True/False values
-        for idx, val in enumerate(self.array):
-            self.idx_is_loop.append(idx >= loop_start)
+        for idx, item in enumerate(array):
+            
+            # add item
+            self.out += self.COLORS["element_loop"] if idx >= loop_start else self.COLORS["element"]
+            self.out += str(item)
+
+            # add edge symbol if not last item
+            self.out += self.COLORS["edge"] + self.SYMBOLS["edge"] if idx != len(array) - 1 else ""
+
+            # reset highlight; it's the right thing to do :)
+            self.out += Fore.RESET
 
     def __str__(self):
         """
         string representation of ChainOutput
-        @return: a string of ints representing the chain
-                 - each value is separated by an edge symbol
-                 - loop values are highlighted in yellow
+        @return: out
         """
         
-        out = ""
+        return self.out
 
-        for item, is_loop in zip(self.array, self.idx_is_loop):
-            
-            # highlight item if it is a loop value
-            out += self.COLORS["element_loop"] if is_loop else self.COLORS["element"]
-            out += str(item)
+class ReelOutput():
 
-            # add edge where appropriate
-            if (item != self.array[-1]):
-                out += self.COLORS["edge"]
-                out += self.SYMBOLS["edge"]
+    # constant: colorama colours for output
+    COLORS = {
+        "separator": Fore.LIGHTBLACK_EX
+    }
 
-            # reset highlight; it's the right thing to do :)
-            out += Fore.RESET
+    # constant: symbols for output
+    SYMBOLS = {
+        "separator": "┆"
+    }
 
-        return out
+    # constant: table styles for tabulate
+    TABLE_STYLE = "plain"
+
+    # constant: custom middle separator for tabulate
+    MIDDLE_SEPARATOR = True
+
+    def __init__(self, reel: Reel.Reel):
+        """
+        constructor
+        @param reel: Reel to output
+        """
+
+        # initialise colorama
+        colorama_init()
+
+        # prepare table
+        self.array = [["Index", self.COLORS["separator"] + self.SYMBOLS["separator"] + Fore.RESET, "Chain"]]
+
+        # calculate chain and loop start index
+        for item in reel:
+            self.array.append([item.starting_value, self.COLORS["separator"] + self.SYMBOLS["separator"] + Fore.RESET, ChainOutput(item.chain)])
+
+        # remove middle column if MIDDLE_SEPARATOR is False
+        if not self.MIDDLE_SEPARATOR:
+            for col in self.array:
+                col.pop(1)
+        
+        # use tabulate to format table
+        self.out = tabulate(self.array, tablefmt=self.TABLE_STYLE, headers="firstrow")
+
+    def __str__(self):
+        """
+        string representation of ReelOutput
+        @return: out
+        """
+
+        return self.out
+
+if __name__ == "__main__":
+
+    # test reelOutput 1 - 100
+    reel = ReelOutput(Reel("fr").gen(1, 100))
+    print(reel)
